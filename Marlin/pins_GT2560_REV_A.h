@@ -33,7 +33,7 @@
 #ifndef BOARD_NAME
   #define BOARD_NAME "GT2560 Rev.A"
 #endif
-#define DEFAULT_MACHINE_NAME "Prusa i3 Pro B"
+#define DEFAULT_MACHINE_NAME "Void Star"
 
 //
 // Limit Switches
@@ -43,8 +43,8 @@
 #define Y_MIN_PIN          26
 #define Y_MAX_PIN          28
 #define Z_MIN_PIN          30
-#define Z_MAX_PIN          -1  //32
-#define FIL_RUNOUT_PIN     32
+#define Z_MAX_PIN          32
+//#define FIL_RUNOUT_PIN     32
 
 //
 // Steppers
@@ -95,7 +95,7 @@
 #define PS_ON_PIN          12
 #define SUICIDE_PIN        54   // Must be enabled at startup to keep power flowing
 #define KILL_PIN           -1
-
+#define SD_DETECT_PIN      38 // LRW: ENABLE SD CARD
 #if ENABLED(ULTRA_LCD)
 
   #define BEEPER_PIN       18
