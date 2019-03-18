@@ -224,8 +224,8 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-#define HOTEND_OFFSET_X {0.0, 19.6} // (in mm) for each extruder, offset of the hotend on the X axis
-#define HOTEND_OFFSET_Y {0.0, 1.1}  // (in mm) for each extruder, offset of the hotend on the Y axis
+#define HOTEND_OFFSET_X {0.0, 20.2} // (in mm) for each extruder, offset of the hotend on the X axis
+#define HOTEND_OFFSET_Y {0.0, 1.0}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // @section machine
 
@@ -608,7 +608,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 190, 190}   // LRW Modifed for CR-10s
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 186, 186}   // LRW Modifed for CR-10s
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 190 }   // LRW Modifed for CR-10s
 
 /**
@@ -618,7 +618,8 @@
  */
 //#define DEFAULT_MAX_FEEDRATE          { 4800, 4800, 1000, 250} // LRW Modifed for CR-10s
 //#define DEFAULT_MAX_FEEDRATE          { 500, 500, 5, 30, 30} // LRW Modifed for CR-10s
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25} // LRW Modifed for CR-10s
+//#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25} // LRW Modifed for CR-10s
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 50, 50} // LRW Modifed for CR-10s
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -627,7 +628,8 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 //#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 100, 5000}
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 75, 4000}
+//#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 75, 4000}
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000}
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -637,9 +639,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          300    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          500//300    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1500//500    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   500//500    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -649,10 +651,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 2.0 //4
-#define DEFAULT_YJERK                 2.0 //4
-#define DEFAULT_ZJERK                  0.3 //0.3
-#define DEFAULT_EJERK                  3.0 //3
+#define DEFAULT_XJERK                 10.0 //2.0 //4
+#define DEFAULT_YJERK                 10.0 //2.0 //4
+#define DEFAULT_ZJERK                  0.4 //0.3 //0.3
+#define DEFAULT_EJERK                 10// 5.0 //3.0 //3
 
 /**
  * S-Curve Acceleration
@@ -888,8 +890,8 @@
 #define Y_BED_SIZE 300 // LRW Modifed for CR-10s
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -14
-#define Y_MIN_POS -6
+#define X_MIN_POS -11
+#define Y_MIN_POS -21
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1279,7 +1281,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
